@@ -28,6 +28,8 @@ class AuthService {
   }
 
   login(idToken) {
+    // Never hit this part 
+    console.log('idToken ==== Never hit here', idToken)
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
 

@@ -48,7 +48,7 @@ const resolvers = {
     },
     Mutation: {
         login: async (parent, { email, password}, context, info) => {
-            const user = await User.findOne({ email })
+          const user = await User.findOne({ email })
             if (!user) {
                 throw new GraphQLError
                 ('User not found', {

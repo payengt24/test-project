@@ -13,6 +13,8 @@ const SignUp = (props) => {
      });
     const [addUser, { error, data}] = useMutation(SIGNUP_USER);
 
+    console.log('error', error);
+    console.log('data', data);
     // UPDATE STATE BASED ON INPUT CHANGES
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -31,6 +33,9 @@ const SignUp = (props) => {
             const { data } = await addUser({
                 variables: { ...formState },
             })
+
+            console.log('---data', data);
+            console.log('data.add', data.addUser)
 
             Auth.login(data.addUser.token);
         } catch (err) {
